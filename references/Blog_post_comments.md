@@ -1,5 +1,4 @@
-# Conversation on [SEG-Y blog post](https://agilescientific.com/blog/2014/3/26/what-is-seg-y.html
-), 26 March 2014
+# Conversation on [SEG-Y blog post](https://agilescientific.com/blog/2014/3/26/what-is-seg-y.html), 26 March 2014
 
 ## Toastar 3 years ago 
 
