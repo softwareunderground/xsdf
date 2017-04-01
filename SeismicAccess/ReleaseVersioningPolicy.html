@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>ReleaseVersioningPolicy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Release Versioning</h2>
+
+<p>
+In the world of Agile development, 'Release early and often' is a strong rule. The question is: does that work well for fundamental libraries?
+</p>
+
+<p>
+If you are talking 'patch releases', in other words, recover earlier errors ASAP, then yes. But for the sort of tool we are making, stability is probably multiple times more important than delivering the next generation of even faster and more pleasing stuff. Therefore, the opposite seems to be in order:
+</p>
+<ul>
+<li>
+Release only well-tested stuff
+
+<li>
+Make few releases
+
+<li>
+Make even fewer interface changes
+
+</ul>
+
+<p>
+In any case, releases need strong versioning. Data created by any release must be readable forever with any following release. And preferably also data created using newer releases should be readable by older versions of the toolkit. That must be designed into the code.
+</p>
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>

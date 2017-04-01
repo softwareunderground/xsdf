@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>OutputIOGeneralization</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Output adapters</h2>
+
+<p>
+Output adapters enable writing data to a target data store or file.
+</p>
+
+<p>
+It is essential to support writing to SEG-Y file. What we do not want is support writing to sub-standard files, i.e. Revision 0. Revision 1 files can now be read by almost all packages. Revision 2 may also be a target in the future although many 'improvements' for Rev. 2 are questionable at best.
+</p>
+
+<p>
+We expect the 'internal' format to be flat-file based, not a special-purpose datastore:
+</p>
+<ul>
+<li>
+Databases are inherently opaque
+
+<li>
+Data exchange usually requires yet another format
+
+</ul>
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>ScopeOfDeliveredServices</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Scope of delivered services</h2>
+
+<p>
+Looking at the draft SEG-Y Rev. 2 specs, watch the authors of the document trying to make it possible to create entire subsurface data stores in one SEG-Y file. There are two issues with this broadening of the scope:
+</p>
+<ul>
+<li>
+By adding possibilities, you force readers of the format to prepare for more and more possibilities, like variable trace lengths, storage types, coordinate system specifics, and so forth
+
+<li>
+When writing, you need to put more and more work in delivering a 'valid' SEG-Y file.
+
+</ul>
+<p>
+Both effects have proven to be harmful, as you can see in the current situation of reading and writing SEG-Y files. SEG-Y revision 1 was a huge improvement because finally we knew where to find crucial position information. If people would have actually used the 'extended stanza' mechanism, we would have had a disaster too: everything would become crazily difficult, also in simple situations.
+</p>
+
+<p>
+A very important rule for good interfaces is: 'keep things very easy for simple work, try to make complicated work just slightly more difficult to do'. To achieve this, we should limit the scope of the work to <strong>explicitly</strong> only cover seismic data access and exchange. To explicitly not encapsulate the connected fields but store only keys to those and keep those optional. In that way we can keep our products usable for a wide range of users.
+</p>
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>

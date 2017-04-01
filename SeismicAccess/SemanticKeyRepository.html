@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>SemanticKeyRepository</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Header information</h2>
+
+<p>
+Apart from the always mandatory <a href="PositionIdentification.html">information of trace keys</a> there is a need for information that can be essential but is simply not always available. This can be per data object ('tape header' info) or per trace ('trace header' info).
+</p>
+
+<p>
+There are some issues that need to be considered. First of all, if you really need a piece of information for some kind of procedure, well, then you really need it. You would want to know whether it is available or not. The problems with SEG-Y files delivering are a.o.:
+</p>
+<ul>
+<li>
+The defined header that should contain the info often does not contain it
+
+<li>
+Sometimes there simply is no defined header for the info you need
+
+<li>
+Multiple headers may deliver a form of the required information
+
+</ul>
+
+<p>
+What we want is a system that tells us:
+</p>
+<ul>
+<li>
+If you need a piece of information of a certain type, then you can find it by looking for a certain key
+
+<li>
+When storing data, try to file it under the best appropriate key. If you don't you reduce the chance that others can make use of it
+
+</ul>
+
+<p>
+This corresponds with a mapping tool that you tell what you want or have, and returns the key under which this should be stored. When reading, the tool looks into the available data and gives the 'best' and maybe alternatives. If you have data that has no standard key, then you can still store it but others may not be able to find it. Reversely, you may be looking for info that simply is not there.
+</p>
+
+<p>
+The core solution is to have a semantic repository that is under central control. This would be a task committee of idealistic experts. Examples:
+</p>
+<ul>
+<li>
+Key: "Sample interval"
+
+<ul>
+<li>
+Description: "The difference in Z postion between two successive samples of a trace."
+
+<li>
+Values: "For OWT or TWT data, in seconds. Depth data, in meters. Geological time: Ma."
+
+</ul>
+</ul>
+
+<p>
+A lot of that stuff is available in SEG-Y and POSC realms. The experts have to remember though, that rather than 'thou shalt store this information as I say so' they have to think in terms of 'information like this is best stored like that'. For the producers of data the issue is to figure out how your data can best be stored so that as many people as possible benefit from it.
+</p>
+
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>

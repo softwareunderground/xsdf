@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>SampleDataAccess</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Access to the sampled data</h2>
+
+<p>
+Data access layers invariably offer different ways to access tha data. Usually, you declare an 'interest', so that the underlying system can optimize access. This seems a good, universally usable strategy.
+</p>
+
+<p>
+Within that 'interest' two modes are essentail:
+</p>
+<ul>
+<li>
+Iteration: just handle all data in a 'natural' order (determined by the system)
+
+<li>
+Random access: be able to inspect different parts as the situation requires
+
+</ul>
+<p>
+For random access, an important requirement is to be able to jump according to alternate keys.
+</p>
+
+<p>
+In terms of supported subselections, it seems most important are ranged subsets (subcubes, line parts) and polylines for random lines in 3D.
+</p>
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>

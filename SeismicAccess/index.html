@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h1 id="toc_1">Open Seismic Data Access</h1>
+
+
+<h2 id="toc_1.1">General requirements</h2>
+<ul>
+<li>
+<a href="ProjectLocation.html">Project on sourceforge.</a>
+
+<li>
+<a href="VersioningSystemAndAccessPoint.html">Everything available through git/svn on github.</a>
+
+<li>
+<a href="LicenseForm.html">Release under e.g. LGPL: ’anything goes as long as you do not hijack it’.</a>
+
+<li>
+<a href="StrategyTowardsUseOfProprietary.html">Will not use anything proprietary above OS level.</a>
+
+<li>
+<a href="PolciyTowardsDependencies.html">Minimize dependencies.</a>
+
+<li>
+<a href="InternationalizationStrategy.html">Internationalisation-prepared from day 1.</a>
+
+<li>
+<a href="SupportedSEGYPolicy.html">Support SEG-Y Rev.1 in/out, Rev.0 in.</a>
+
+<li>
+<a href="ScopeOfDeliveredServices.html">The project focuses on storage and exchange of seismic data.</a>
+
+</ul>
+
+<h2 id="toc_1.2">General design</h2>
+<ul>
+<li>
+<a href="CoreLibraryDesign.html">Core library covers minimal set.</a>
+
+<li>
+<a href="GeneralizedIOStrategy.html">All I/O as adapters (enabling 'in-place' usage).</a>
+
+<ul>
+<li>
+<a href="InputIOGeneralization.html">Input-side adapters (like SEG-Y).</a>
+
+<li>
+<a href="OutputIOGeneralization.html">Output-side adapters (like SEG-Y Rev. 1).</a>
+
+</ul>
+<li>
+<a href="InternalPhysicalStorage.html">Flat file hi performance implementation available.</a>
+
+</ul>
+
+<h2 id="toc_1.3">Release components</h2>
+<ul>
+<li>
+<a href="CrossPlatformAndLanguage.html">Cross-platform language delivers interfaces for different target languages.</a>
+
+<ul>
+<li>
+libs/DLLs/jars etc. for different platforms
+
+</ul>
+<li>
+<a href="PlatformsForSupportTools.html">Tools (in-browser, loose) available on all target platforms.</a>
+
+<li>
+<a href="DocSystemInternationalizationPolicy.html">Docs internationalized.</a>
+
+<li>
+<a href="TargetPlatformsPolicy.html">Target platforms: as many as possible.</a>
+
+<ul>
+<li>
+Starting with Windows/Linux/Mac
+
+<li>
+Android please
+
+</ul>
+<li>
+<a href="ReleaseVersioningPolicy.html">Versioning.</a>
+
+<ul>
+<li>
+strong versioning
+
+<li>
+few releases
+
+<li>
+even fewer interface changes (once released)
+
+</ul>
+</ul>
+
+<h2 id="toc_1.4">Data model</h2>
+<ul>
+<li>
+<a href="PositionIdentification.html">Handling of position identification.</a>
+
+<li>
+<a href="SemanticKeyRepository.html">Centralized semantic key repository.</a>
+
+<ul>
+<li>
+For headers at different levels
+
+<li>
+For semi-free format comments on different levels
+
+</ul>
+</ul>
+
+<h2 id="toc_1.5">Programmer access</h2>
+<ul>
+<li>
+<a href="HeaderAccess.html">Quick access to header values on different levels.</a>
+
+<li>
+<a href="SampleDataAccess.html">Rich access possibilities to seismic data.</a>
+
+<ul>
+<li>
+Full random access
+
+<li>
+Virtual subsets
+
+<ul>
+<li>
+Random trace, slice
+
+<li>
+Ranged subsets (subcubes, line parts)
+
+<li>
+Polylines
+
+</ul>
+</ul>
+<li>
+<a href="InitialWrite.html">Different ways to start writing.</a>
+
+<ul>
+<li>
+Start with one trace
+
+<li>
+Start with known parameters
+
+</ul>
+<li>
+<a href="InPlaceEditing.html">In-place editing.</a>
+
+</ul>
+
+<h2 id="toc_1.6">Data storage native format</h2>
+<ul>
+<li>
+<a href="DataModificationPolicy.html">Database-style modification.</a>
+
+<ul>
+<li>
+support staged for commit
+
+<li>
+write-locking mechanism when editing
+
+</ul>
+<li>
+<a href="BrickingPolicy.html">Bricking supported.</a>
+
+<li>
+<a href="CompressionPolicy.html">Compression if feasible.</a>
+
+<li>
+<a href="VersioningPolicy.html">Full backwards compatibility guaranteed.</a>
+
+</ul>
+
+<h2 id="toc_1.7">Tools</h2>
+
+<ul>
+<li>
+<a href="SEGYImportTool.html">GUI Tool to read (legacy) SEG-Y.</a>
+
+<ul>
+<li>
+Indicate keys (inl/crl, X/Y, tracenr/cdp/SP)
+
+<li>
+Add missing data
+
+<li>
+Make sure all harvested header data can be kept available
+
+</ul>
+<li>
+Browser tools for view and edit
+
+<ul>
+<li>
+<a href="BrowserToolHeaders.html">Headers</a>
+
+<li>
+<a href="BrowserToolSections.html">Sections (View only)</a>
+
+<li>
+Specific data parts (Edit)
+
+<ul>
+<li>
+<a href="AutomatedDataEditTools.html">Automated</a>
+
+<li>
+Manual
+
+<ul>
+<li>
+<a href="SampleValueEditor.html">Sample level 'spreadsheet'</a>
+
+<li>
+<a href="ManualPaintedEditing.html">Interactive 'painting'</a>
+
+</ul>
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>

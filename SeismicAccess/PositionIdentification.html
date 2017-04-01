@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>PositionIdentification</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h2 id="toc_0.1">Handling of position identification</h2>
+
+
+<p>
+A major issue when handling old SEG-Y files is what defines the position of a trace. In 3D, you have inline/crossline versus (X,Y), the two are connected via what is called in Petrel a 'SpatialLattice'. In 2D, the situation is, in a way, even worse. There is no such consensus on trace identification like the inline/crossline in 3D. Therefore, to identify a trace you have to choose a 'Trace number'. The CDP number would be a good candidate, were it not that very often users do not even recognize the numbering.
+</p>
+
+<p>
+In any case, trace positions need to be identified and coupled to a position in a coordinate system. Although the exact nature of the coordinate system is crucial to the user, it is not an issue of seismic data exchange as such. The only requirements are:
+</p>
+<ul>
+<li>
+A trace has a key which identifies its position. The key can consist of multiple numbers (for example inline <strong>and</strong> crossline).
+
+<li>
+That key will be coupled to an (X,Y) in a known coordinate system.
+
+</ul>
+
+<p>
+For pre-stack data an extra field 'offset' enters the arena. It takes upon itself a bit of both roles: identification AND co-ordinate. To complete the positioning info the 'azimuth' would be required, but it's hardly ever available.
+</p>
+
+<p>
+The general strategy to handle these issues is to make the keying mandatory and some form of positioning from that required. Any other per-trace info can be optional.
+</p>
+
+<p>
+<a href="index.html">Back</a>
+</p>
+
+</body>
+</html>
