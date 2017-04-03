@@ -1,5 +1,8 @@
 # CONVERSATION ABOUT SCANNING SEGY on Software Underground
 
+> from the #general channel.
+> If anyone captures convo after 3 April 2017, please dump to a new file.
+
 ----- March 14th -----
 
 nthorder [12:55 PM] 
@@ -202,22 +205,15 @@ both netCDF and HDF5 are used for marine CSEM data successfully, but I know CSEM
 
 bertb [10:21 PM] 
 I think there is so much more to the problem than just finding an 'optimal' format ...
- 
 
 [10:22]  
 I made a document about this, it was some time ago, but I put it on my google drive:
-
-[10:22]  
 https://drive.google.com/drive/folders/0B9Zs3IHsKfE0TG9rdFJkOFhlYkU?usp=sharing
-
-[10:23]  
 there is an index.html in there
-
-[10:25]  
-Hmm I find it hard to view stuff outside my own google drive. But readin the index.html will give you teh picture
-
-[10:30]  
+Hmm I find it hard to view stuff outside my own google drive. But readin the index.html will give you teh picture 
 Sorry it is something I created with vimwiki, it's a directory with HTML files. Not sure how to share it properly. I have a zip file if anyone is interested.
+
+> nb this file is in this repo at [../SeismicAccess/index.html](../SeismicAccess/index.html)
 
 hassan_s [10:31 PM] 
 seg-y is originally read from tapes sequentially, so it can be understood why it is not optimized for random access
@@ -226,33 +222,21 @@ bertb [10:31 PM]
 yes we can explain it, but do we all still need to use it? (edited)
 
 hassan_s [10:31 PM] 
-seg-y is still necessary. but the use case for processing/analytics is a different story
-
-[10:32]  
+seg-y is still necessary. but the use case for processing/analytics is a different story 
 I would propose a split up format with a header file and trace files
 
 bertb [10:33 PM] 
-Did you take a look at my documents?
-
-[10:33]  
+Did you take a look at my documents?  
 The big issues are on a data management level
-
-[10:34]  
 it is not that hard to figure out some fats stuff that will work in some situations
 
 hassan_s [10:34 PM] 
-just read the updated convo while on the go
-
-[10:34]  
+just read the updated convo while on the go 
 not yet
 
 bertb [10:34 PM] 
 it will be hard to make something that will be usable and acceptable for everyone
-
-[10:35]  
 not in the least because there are already contenders for the title of 'the new format', and they fight each other to death
-
-[10:36]  
 what we'd need is a community project that focuses on the entire problem, not just on data formats
 
 hassan_s [10:37 PM] 
@@ -260,36 +244,21 @@ just v quickly, grouping the main  header, index and linkage to trace locations 
 
 bertb [10:37 PM] 
 I doubt that
-
-[10:39]  
 For one thing, then there is no bricking for quick random access like time slices
-
-[10:40]  
 compression is also interesting for cloud access
-
-[10:40]  
 tehre is the issue of position keys
-
-[10:41]  
 per-position aux data issues
 
 hassan_s [10:41 PM] 
 page swapping work the same way
-
-[10:42]  
 index first, then jump to actual location
 
 bertb [10:42 PM] 
-try reading a single sample per trace for a terabyte cube
-
-[10:43]  
+try reading a single sample per trace for a terabyte cube  
 ok I'll leave it at that, hope you can find a way to read the document
 
 davidmholmes [11:53 AM] 
 I went along to the SEG standards meeting at New Orleans, where this update was basically pushed through. Eight people turned up, one was there to present a certificate, one person was in the wrong room but was too embarrassed to admit it, and another didn’t say a word. So the bottom line is that the whole thing is really driven by three people. It blows my mind that one of the most complex and long living technical data standards has such little input from the broader community. It’s also the reason that there is no appetite to do anything other than spin the standard to plaster the cracks rather than re-imagining what a new standard might look like and how we might solve the broader set of issues with sharing and executing computation on seismic data in a very different universe from the one in which the original standard was conceived.
- 
-
-[11:54]  
 stateOfMind.Ranting(off)
 
 sebastiang [11:56 AM] 
@@ -307,7 +276,6 @@ ah
 davidmholmes [12:36 PM] 
 If I have one more conversation with someone who says something like “oh yes, that’s a transitional survey so we relocate the X/Y locations so that we can store elevation and bathymetry there instead” I might just completely lose it....
 
-
 [12:39]  
 Of course if you’re really lucky and you’re shooting 3D on a surface with linear gradient changes, the elevation/bathymetry looks a lot like co-ordinates. All you need to do then is find a CRS that you can translate to vaguely the right area and you’re off to the races....
 
@@ -316,48 +284,30 @@ Surely I don't mean that we should replace segy. I just like the exercise. And h
 
 matt [1:21 PM] 
 Relevant re-post from a few days ago... http://seismic-data.org/
-
-[1:22]  
 (for global seismology / earthquake records, but I like the approach and execution. This is from the ObsPy folks, @krischer et al)
-
 
 ahartikainen [1:40 PM] 
 That is great, I did not notice that before. Just wonder why they use astropy for times etc :thinking_face:
+
 matt [3:46 PM] 
 @nthorder This talk seems relevant to your question about parallel access to SEG-Y headers the other day https://www.youtube.com/watch?v=Y00Js6uPWI0&list=PLcsG4X8Zn_UDtkbuLj8K_gnjwytjK7BdW&index=10 cc @joferkington @sebastiang @hassan_s @bertb (one of the talks from the recent Rice HPC meeting that @davidmholmes posted about in #random)
+
 davidmholmes [3:47 PM] 
-Agreed. I just watched it.
-
-[3:48]  
+Agreed. I just watched it. 
 Our Irish CTO is a buddy of mine and he does a bunch of work with ICHEC. I've asked if he can make an introduction. I'd like to see if we can get Cathal to join Swung.
-
-[3:50]  
 I presume it's not being open sourced until September so that DDN can get a head start on the competition.
-
-[3:51]  
-The burst buffer idea is something we've played with but scaling it is not straightforward. They got great results with relatively small datasets but it's not obvious what would happen as the scale increased.
-
-[3:51]  
+The burst buffer idea is something we've played with but scaling it is not straightforward. They got great results with relatively small datasets but it's not obvious what would happen as the scale increased. 
 Also, they're only supporting SEG-Y at the moment which is unusual given that the primary application is for processing.
 
 bertb [7:44 PM] 
 Everything gets different when you talk cloud access. You have to prepare for massively parallel access to data in buckets. This is on top of the stuff I wrote in the document I made earlier. All in all the hunt for a 'new format' is not going to be decided on the 'file format' level, but on 'interface access level'.
-
-[7:46]  
-In terms of interface access, it is important to consider the various needs that the different groups have: acquisition, processing, interpretation. Different needs, different data. Header keys, access strategies, ...
-
-[7:50]  
+In terms of interface access, it is important to consider the various needs that the different groups have: acquisition, processing, interpretation. Different needs, different data. Header keys, access strategies, ... 
 It would be so useful to have a common interface used all the way from acquisition (shallow, deep) to interpretation for 2D, 3D, 4,5,6, ... post/pre stack in different cloud types (Amazon, Azure, Google, ...) - and all that through interfaces that are as simple as possible ... A real challenge.
 
 
 ----- March 26th -----
 fredrocks [10:50 AM] 
 Interesting new repository to add to the netcdf, segy discussions : https://github.com/ar4/netcdf_segy
-GitHub
-ar4/netcdf_segy
-netcdf_segy - Convert between SEG-Y and NetCDF
- 
- 
 
 
 ----- March 27th -----
@@ -368,3 +318,71 @@ My project is, as you note, for “medium” datasets - for truly small datasets
 
 sanandak [4:19 PM] 
 Apropos of nothing - for messaging between programs (and between machines), there is nothing better than ZeroMQ: http://zeromq.org.  It takes away all the heavy lifting of tcp sockets and lets you send messages in half a dozen lines of code… If you ever find yourself opening up the man page on sockaddr_in or whatever, stop!
+
+
+----- April 1st ----- (but not joking)
+
+In an almost certainly misguided attempt to get my arms around things, I made a repo with a lot of stuff about 'the next gen seismic data format'. https://github.com/softwareunderground/xsdf 
+Heads up @bertb - your HTML doc is in there, please let me know if you wish it wasn't.
+cc @nthorder @sebastiang @mtb-za @lmoss and everyone else who was interested. I have no idea where this needs to go. Plan A is probably to figure out if ASDF is adaptable enough to be the thing. http://seismic-data.org/
+
+dopplershift [5:55 PM] 
+@matt Is netCDF excluded?
+
+bertb [6:48 PM] 
+@matt: Nice! I had already given up.  A bit of a pity it shows the HTML code rather than the page when you click on it ...
+
+josephwinston [7:41 PM] 
+The requirement not to have any external dependencies is too harsh and I don't support this idea.  Minimal dependencies, is something I'd like to see.
+
+bertb [8:01 PM] 
+Agree. Minimal dependencies, and make sure the dependencies are on a project that is very well alive and kicking. And of course no proprietary stuff ...
+
+
+----- April 2nd, 2017 -----
+leouieda [12:01 AM] 
+Yep. Without hdf5 you might loose access to cool things like http://www.opendap.org/ (there is a Python client http://pydap.readthedocs.io) and all the maths infrastructure like xarray which parallelizes a lot of things through dask. 
+I like the idea of "Language and platform agnostic.", though that usually means writing a C library.
+
+sebastiang [1:47 PM] 
+I think the general problem with a standard seismic format is that there are several standard ways you want to ~process~ access seismic. transporting as a tape, reading off of geophones, random access for interpretation, access for processing, all suggest different tradeoffs. (edited)
+SEG-Y is bad, but history has proven it’s good enough.
+
+ahartikainen [5:03 PM] 
+Transporting as a tape? Who still uses tape? :scream:
+
+jonnyford [5:43 PM] 
+Just from my experience in a processing shop - a surprisingly large number of (major) companies. Granted, these days most only insist on getting a tape copy as part of their archiving/backups process but there are a good number that still use tape as their primary format to move data around. Things are changing but tape is still clinging on as "common denominator" medium for seismic interchange in the oil and gas industry.
+
+bertb [7:08 PM] 
+And we are working like mad to support direct cloud access. Putting everything in the cloud is the new thing, flexible computing power, flexible disk space, cost savings. The challenge is not to go through any file system but access the buckets/blobs directly for huge speedup and cost saving. Will there be tapes in 5 years? Does anyone still work with punched cards or floppy disks?
+
+quicksilversystems [11:53 PM] 
+joined #general
+
+
+----- April 3rd, 2017 -----
+matt [8:37 AM] 
+@bertb I've seen a few people making virtual file systems for their cloud storage, so other apps are effectively supported 'for free' (as if)... have you come across that?
+
+hassan_s [9:39 AM] 
+@bertb I have not been providing input on seismic format proposal because I felt it'd be irresponsible to comment but not actually work on it. Time is precious however but I still would like to contribute, so here is my 2 cents. Something like protobuf or hdf5 is sufficient, and you will need several specs based on each use case. I'd rather have each software read seg-y then produce a standard cache format based on the use-case.  
+with SSD, reading should be fast enough that we don't have to  super-optimize the format to get as much sequential read pattern as possible. 
+It's cheaper to buy more SSD compared to the time spent trying to optimize for all use cases and getting others to adopt them.
+
+bertb [11:05 AM] 
+I think you are not right; Fast storage is just part of the problem. Data over networks. Data in cloud storage accessed by virtual machines residing in the cloud. And more. There will never be a shortage of use cases where performance is an issue. Whether HDF can solve everything? I would not know. All I know is that everything that was tried before failed - because the format was plainly rejected because of these concerns. Just waving them away is IMO not a good attitude.
+
+sanandak [1:06 PM] 
+Nice post on chunking in HDF5: http://geology.beer/2015/02/10/hdf-for-large-arrays/
+
+geo_leeman [3:33 PM] 
+To echo @dopplershift - is there something ruling out netCDF? Uses HDF5 with an easy API.
+
+sebastiang [3:51 PM] 
+If I ran this slack I’d suggest a dedicated channel at this point. #death-to-segy or something. :smile:
+
+matt [4:35 PM] 
+Your wish is my command. #xsdf At least we will get #general back :slightly_smiling_face:
+
+> At this point the convo moves to #xsdf I hope and it's probably a good time to start a new archive.
