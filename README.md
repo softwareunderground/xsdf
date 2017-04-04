@@ -33,4 +33,4 @@ This is a set of rough notes about a fictional future format for the exchange of
 - [Conversations from Software Underground](references/Software_Underground_chat.md)
 - [Stack Exchange question](references/Stack_Exchange_question.md)
 - [Blog post comments](references/Blog_post_comments.md)
-- [Bert Bril's description](Old_specs_bert)
+- [Bert Bril's description](wiki/Old_specs_bert)
